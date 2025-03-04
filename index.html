@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>Fear Not - The Evzones</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
         
         * {
             margin: 0;
@@ -14,64 +14,133 @@
         }
         
         body {
-            background: url('https://upload.wikimedia.org/wikipedia/commons/e/e1/Colosseo_2020.jpg') no-repeat center center/cover;
-            height: 100vh;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-family: 'Poppins', sans-serif;
-            color: white;
-            text-align: center;
+            position: relative;
         }
-        
-        .overlay {
-            background: rgba(0, 0, 0, 0.6);
-            position: absolute;
+
+        .background {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
+            background: url('./assets/two.jpeg') no-repeat center center/cover;
+            z-index: -1;
         }
-        
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(23, 23, 23, 0.6);
+            z-index: 0;
+        }
+
         .content {
             position: relative;
             z-index: 2;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
             animation: fadeIn 2s ease-in-out;
+            width: 80%;
+            max-width: 600px;
         }
-        
+
         h1 {
             font-size: 50px;
-            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            color: yellow;
+            text-shadow: 0 0 10px yellow;
             animation: fadeUp 1.5s ease-in-out;
         }
-        
+
         p {
-            font-size: 18px;
-            margin-top: 10px;
+            font-size: 20px;
             animation: fadeUp 2s ease-in-out;
         }
-        
+
+        .story {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 0);
+            animation: fadeIn 3s ease-in-out;
+            width: 80%;
+            max-width: 600px;
+            background: rgb(46, 46, 46);
+        }
+
+        .bottom-text {
+            position: relative;
+            margin-top: 20px;
+            font-size: 18px;
+            color: yellow;
+            text-shadow: 0 0 5px yellow;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        
+
         @keyframes fadeUp {
             from { transform: translateY(30px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
+        .glow {
+            animation: glowing 2s infinite alternate;
+        }
+
+        @keyframes glowing {
+            from {
+                text-shadow: 0 0 10px yellow, 0 0 20px yellow;
+            }
+            to {
+                text-shadow: 0 0 20px white, 0 0 40px yellow;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+            p {
+                font-size: 18px;
+            }
+            .content, .story {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="background"></div>
     <div class="overlay"></div>
+    
     <div class="content">
-        <h1>Coming Soon</h1>
-        <p>We are working on something amazing. Stay tuned!</p>
+        <h1 class="glow">FEAR NOT</h1>
+        <p>THE EVZONES ARE COMING TO YOUR PROTECTION</p>
     </div>
+    
+    <div class="story">
+        <h2>Who Were the Evzones?</h2>
+        <p style="font-size: 11px; text-align: justify;">The Evzones were elite Greek soldiers known for their bravery, discipline, and unique uniforms. Historically, they played a crucial role in Greece's military, especially in mountain warfare. Today, they serve as the Presidential Guard, a symbol of national pride, protecting the Tomb of the Unknown Soldier in Athens.</p>
+        <p style="font-size: 11px; text-align: justify;">The Evzones symbolize unwavering quality, precision, and security, standing as guardians of national integrity. Their disciplined vigilance mirrors the essence of assurance and reliability, ensuring steadfast protection—just as quality assurance safeguards software excellence.</p>
+    </div>
+    
+    <div class="bottom-text">Website Coming Soon...</div>
 </body>
 </html>
